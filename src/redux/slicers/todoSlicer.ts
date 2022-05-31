@@ -1,10 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import ITodo from "../../types/todo";
-import {
-  setTodosFromLocalStorage,
-  addTodos,
-  removeTodos,
-} from "./../reducers/todoReducers";
+import { addTodos, removeTodos } from "./../reducers/todoReducers";
 
 const initialState: ITodo[] = [
   {
@@ -31,11 +27,12 @@ const todoSlicer = createSlice({
   name: "todos",
   initialState,
   reducers: {
-    setTodosFromLocalStorage,
-    addTodos,
-    removeTodos,
+    addTodosAction: addTodos,
+    removeTodosAction: removeTodos,
   },
   extraReducers: {},
 });
+
+export const { addTodosAction, removeTodosAction } = todoSlicer.actions;
 
 export default todoSlicer.reducer;

@@ -1,9 +1,13 @@
 import { ChangeEvent, FormEvent, useState } from "react";
 import { CustomButton } from "../../../components/CustomButton/CustomButton";
 import { CustomInput } from "../../../components/CustomInput/CustomInput";
+import { useAppDispatch } from "../../../hooks/reduxHooks";
+import { addTodosAction } from "../../../redux/slicers/todoSlicer";
+import ITodo from "../../../types/todo";
 import "./addTodoForm.scss";
 
 export const AddTodoForm = () => {
+  const dispatch = useAppDispatch();
   const [value, setValue] = useState<string>("");
   const [validateErrorText, setValidateErrorText] = useState<string>("");
 
@@ -20,8 +24,15 @@ export const AddTodoForm = () => {
       setValidateErrorText("Минимум 3 символа");
       return;
     }
+    const todo: ITodo = {
+      id: Date.now().toString(),
+      title: value,
+      completed: false,
+      createTime: Date.now(),
+    };
     setValidateErrorText("");
-    console.log(value);
+    setValue("");
+    dispatch(addTodosAction(todo));
   };
 
   return (

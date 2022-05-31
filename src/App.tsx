@@ -8,6 +8,7 @@ function App() {
       <Routes>
         <Route path="/">
           <Route index element={<TodosPage />} />
+          <Route path="/auth" element={<div></div>} />
         </Route>
       </Routes>
     </Layout>
