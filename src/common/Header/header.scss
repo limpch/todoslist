@@ -1,0 +1,13 @@
+.header {
+  background-color: #7869ff;
+  &__container {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__logo {
+    font-size: 40px;
+    color: rgb(255, 193, 241);
+  }
+}

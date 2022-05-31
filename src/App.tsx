@@ -1,10 +1,17 @@
-import { useAppSelector } from "./hooks/reduxHooks";
-import ITodo from "./types/todo";
+import { Route, Routes } from "react-router-dom";
+import { Layout } from "./common/Layout/Layout";
+import { TodosPage } from "./pages/TodosPage/TodosPage";
 
 function App() {
-  const todos: ITodo[] = useAppSelector((state) => state.todos);
-
-  return <div className="App">{JSON.stringify(todos)}</div>;
+  return (
+    <Layout>
+      <Routes>
+        <Route path="/">
+          <Route index element={<TodosPage />} />
+        </Route>
+      </Routes>
+    </Layout>
+  );
 }
 
 export default App;

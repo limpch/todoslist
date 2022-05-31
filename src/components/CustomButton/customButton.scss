@@ -1,0 +1,30 @@
+.cbtn {
+  padding: 10px 15px;
+  background-color: #ccc;
+  color: black;
+  width: 100%;
+  &.red {
+    background: #ff5e5e;
+    transition: all 0.3s ease 0s;
+    &:hover {
+      background: #ff4d4d;
+    }
+    color: white;
+  }
+  &.blue {
+    background: #7869ff;
+    transition: all 0.3s ease 0s;
+    &:hover {
+      background: #533fff;
+    }
+    color: white;
+  }
+  &.green {
+    color: white;
+    background: #4fc238;
+    transition: all 0.3s ease 0s;
+    &:hover {
+      background: #37af20;
+    }
+  }
+}
